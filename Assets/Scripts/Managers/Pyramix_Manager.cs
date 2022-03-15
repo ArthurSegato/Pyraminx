@@ -1,11 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
-public class piraManager : MonoBehaviour
+public class Pyramix_Manager : MonoBehaviour
 {
-
-    public GameObject tetrahedron; // prefab da camrera
+    public GameObject tetrahedron;
     public GameObject[] vetGameObj = new GameObject[24];
     GameObject pai;
     Vector3 m_Center;
@@ -24,7 +20,7 @@ public class piraManager : MonoBehaviour
         }
 
         //pegar tetra da posicao 3 e transladar
-        //1 face
+        // Frente
         vetGameObj[3].transform.position = new Vector3(0.5f, 0.86603f, 0.28868f);
         vetGameObj[3].transform.Rotate(110f, 0f, 0); // 90f
         vetGameObj[4].transform.position = new Vector3(1.5f, 0.86603f, 0.28868f);
@@ -36,10 +32,10 @@ public class piraManager : MonoBehaviour
         vetGameObj[8].transform.position = vetGameObj[6].transform.position;
         Debug.Log(vetGameObj[2].transform.position.x);
 
-        //2 face
+        // Baixo
         vetGameObj[9].transform.position = new Vector3(vetGameObj[0].transform.position.x, vetGameObj[0].transform.position.y, vetGameObj[0].transform.position.z+2);
-        vetGameObj[9].transform.Rotate(110f, 0f, 0f); // 90f
-/*        vetGameObj[10].transform.position = new Vector3(vetGameObj[9].transform.position.x+1, vetGameObj[9].transform.position.y, vetGameObj[9].transform.position.z);
+        vetGameObj[9].transform.Rotate(-110f, 0f, 0f);
+/*      vetGameObj[10].transform.position = new Vector3(vetGameObj[9].transform.position.x+1, vetGameObj[9].transform.position.y, vetGameObj[9].transform.position.z);
         vetGameObj[11].transform.position = new Vector3(vetGameObj[9].transform.position.x + 2, vetGameObj[9].transform.position.y, vetGameObj[9].transform.position.z);
         vetGameObj[12].transform.position = new Vector3(vetGameObj[9].transform.position.x+0.5f, vetGameObj[9].transform.position.y+ 0.86603f, vetGameObj[9].transform.position.z+ 0.28868f);
         vetGameObj[12].transform.Rotate(110f, 0f, 0); // 90f
@@ -68,12 +64,12 @@ public class piraManager : MonoBehaviour
         // vetGameObj[3].transform.RotateAround(transform.position, Vector3.forward, 5f);
 
         pai = new GameObject();
+        pai.name = "Pivo 1";
         //pai.transform.position = new Vector3(0,1,0); //pivo
         pai.transform.position = new Vector3(0, 1, 0); //pivo
         vetGameObj[3].transform.parent = pai.transform;
         //vetGameObj[3].transform.bounds
     }
-
 
     // Update is called once per frame
     void Update()
