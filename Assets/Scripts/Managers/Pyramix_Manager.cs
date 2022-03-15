@@ -13,16 +13,18 @@ public class Pyramix_Manager : MonoBehaviour
             if (i == 0)
             {
                 vetGameObj[i] = Instantiate(tetrahedron, new Vector3(0, 0, 0), Quaternion.identity); // tetraedro base
+                vetGameObj[i].name = "Triangulo Base";
             }
             else
                 vetGameObj[i] = Instantiate(tetrahedron, new Vector3(vetGameObj[i - 1].transform.position.x + 1, 0, 0), vetGameObj[i - 1].transform.rotation);
+                vetGameObj[i].name = "Triangulo " + i;
             //i-1 posicao anterior
         }
 
         //pegar tetra da posicao 3 e transladar
         // Frente
         vetGameObj[3].transform.position = new Vector3(0.5f, 0.86603f, 0.28868f);
-        vetGameObj[3].transform.Rotate(110f, 0f, 0); // 90f
+        vetGameObj[3].transform.Rotate(110f, 0f, 0);
         vetGameObj[4].transform.position = new Vector3(1.5f, 0.86603f, 0.28868f);
         vetGameObj[4].transform.Rotate(110f, 0f, 0);
         vetGameObj[5].transform.position = vetGameObj[3].transform.position;
@@ -33,9 +35,9 @@ public class Pyramix_Manager : MonoBehaviour
         Debug.Log(vetGameObj[2].transform.position.x);
 
         // Baixo
-        vetGameObj[9].transform.position = new Vector3(vetGameObj[0].transform.position.x, vetGameObj[0].transform.position.y, vetGameObj[0].transform.position.z+2);
+        vetGameObj[9].transform.position = new Vector3(vetGameObj[0].transform.position.x + 0.5f, vetGameObj[0].transform.position.y, vetGameObj[0].transform.position.z + 0.9f);
         vetGameObj[9].transform.Rotate(-110f, 0f, 0f);
-/*      vetGameObj[10].transform.position = new Vector3(vetGameObj[9].transform.position.x+1, vetGameObj[9].transform.position.y, vetGameObj[9].transform.position.z);
+        vetGameObj[10].transform.position = new Vector3(vetGameObj[9].transform.position.x+1, vetGameObj[9].transform.position.y, vetGameObj[9].transform.position.z);
         vetGameObj[11].transform.position = new Vector3(vetGameObj[9].transform.position.x + 2, vetGameObj[9].transform.position.y, vetGameObj[9].transform.position.z);
         vetGameObj[12].transform.position = new Vector3(vetGameObj[9].transform.position.x+0.5f, vetGameObj[9].transform.position.y+ 0.86603f, vetGameObj[9].transform.position.z+ 0.28868f);
         vetGameObj[12].transform.Rotate(110f, 0f, 0); // 90f
@@ -55,7 +57,7 @@ public class Pyramix_Manager : MonoBehaviour
         vetGameObj[21].transform.Rotate(110f, 0f, 0); // 90f
         vetGameObj[22].transform.position = new Vector3(vetGameObj[19].transform.position.x + 0.5f, vetGameObj[19].transform.position.y + 0.86603f, vetGameObj[19].transform.position.z + 0.28868f);
         vetGameObj[22].transform.Rotate(110f, 0f, 0);
-        vetGameObj[23].transform.position = vetGameObj[21].transform.position;*/
+        vetGameObj[23].transform.position = vetGameObj[21].transform.position;
 
         //  vetGameObj[11].transform.position = new Vector3(vetGameObj[2].transform.position.x + 3, vetGameObj[2].transform.position.y, vetGameObj[2].transform.position.z);
         //vetGameObj[11].transform.Rotate(0f, -110f, 0f);
