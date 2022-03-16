@@ -1,76 +1,39 @@
 using UnityEngine;
 public class Pyramix_Manager : MonoBehaviour
 {
-    public GameObject tetrahedron;
-    public GameObject[] vetGameObj = new GameObject[24];
-    GameObject pai;
-    Vector3 m_Center;
+    // Quantidade de triangulos a serem criados
+    public int numeroDeTriangulos = 0;
+    // Qual o triangulo base que vai ser clonado
+    public GameObject triangulo;
+    // Array de triangulos
+    public GameObject[] trianguloArray;
+    // Array de pivores
+    public GameObject[] pivoArray;
     // Use this for initialization
     void Start()
     {
-        for (int i = 0; i < 24; i++)
+        trianguloArray = new GameObject[numeroDeTriangulos];
+        pivoArray = new GameObject[numeroDeTriangulos];
+        for (int i = 0; i < numeroDeTriangulos; i++)
         {
-            if (i == 0)
-            {
-                vetGameObj[i] = Instantiate(tetrahedron, new Vector3(0, 0, 0), Quaternion.identity); // tetraedro base
-                vetGameObj[i].name = "Triangulo Base";
-            }
-            else
-                vetGameObj[i] = Instantiate(tetrahedron, new Vector3(vetGameObj[i - 1].transform.position.x + 1, 0, 0), vetGameObj[i - 1].transform.rotation);
-                vetGameObj[i].name = "Triangulo " + i;
-            //i-1 posicao anterior
+            // Cria um pivo
+            pivoArray[i] = new GameObject();
+            // Define a posição inicial de cada pivo
+            pivoArray[i].transform.position = new Vector3(0, 0, 0);
+            // Da um nome para cada pivo
+            pivoArray[i].name = "Pivo " + i;
+            // Cria um triangulo
+            GameObject trianguloClone = Instantiate(triangulo, new Vector3(-0.5f, -0.28f, -0.28f), Quaternion.identity);
+            // Define a escala do triangulo criado
+            trianguloClone.transform.localScale = Vector3.one;
+            // Enfia o triangulo no array
+            trianguloArray[i] = trianguloClone;
+            // Da um nome pro triangulo
+            trianguloArray[i].name = "Triangulo " + i;
+            // Envia o triangulo no pivo            
+            trianguloArray[i].transform.parent = pivoArray[i].transform;
+            
         }
-
-        //pegar tetra da posicao 3 e transladar
-        // Frente
-        vetGameObj[3].transform.position = new Vector3(0.5f, 0.86603f, 0.28868f);
-        vetGameObj[3].transform.Rotate(110f, 0f, 0);
-        vetGameObj[4].transform.position = new Vector3(1.5f, 0.86603f, 0.28868f);
-        vetGameObj[4].transform.Rotate(110f, 0f, 0);
-        vetGameObj[5].transform.position = vetGameObj[3].transform.position;
-        vetGameObj[6].transform.position = new Vector3(vetGameObj[1].transform.position.x, vetGameObj[1].transform.position.y + 1.70603f, vetGameObj[1].transform.position.z + 0.58858f);
-        vetGameObj[6].transform.Rotate(110f, 0f, 0);
-        vetGameObj[7].transform.position = vetGameObj[4].transform.position;
-        vetGameObj[8].transform.position = vetGameObj[6].transform.position;
-        Debug.Log(vetGameObj[2].transform.position.x);
-
-        // Baixo
-        vetGameObj[9].transform.position = new Vector3(vetGameObj[0].transform.position.x + 0.5f, vetGameObj[0].transform.position.y, vetGameObj[0].transform.position.z + 0.9f);
-        vetGameObj[9].transform.Rotate(-110f, 0f, 0f);
-        vetGameObj[10].transform.position = new Vector3(vetGameObj[9].transform.position.x+1, vetGameObj[9].transform.position.y, vetGameObj[9].transform.position.z);
-        vetGameObj[11].transform.position = new Vector3(vetGameObj[9].transform.position.x + 2, vetGameObj[9].transform.position.y, vetGameObj[9].transform.position.z);
-        vetGameObj[12].transform.position = new Vector3(vetGameObj[9].transform.position.x+0.5f, vetGameObj[9].transform.position.y+ 0.86603f, vetGameObj[9].transform.position.z+ 0.28868f);
-        vetGameObj[12].transform.Rotate(110f, 0f, 0); // 90f
-        vetGameObj[13].transform.position = new Vector3(vetGameObj[10].transform.position.x + 0.5f, vetGameObj[10].transform.position.y + 0.86603f, vetGameObj[10].transform.position.z + 0.28868f);
-        vetGameObj[13].transform.Rotate(110f, 0f, 0);
-        vetGameObj[14].transform.position = vetGameObj[12].transform.position;
-        vetGameObj[15].transform.position = new Vector3(vetGameObj[10].transform.position.x, vetGameObj[10].transform.position.y + 1.70603f, vetGameObj[10].transform.position.z + 0.58858f);
-        vetGameObj[15].transform.Rotate(110f, 0f, 0);
-        vetGameObj[16].transform.position = vetGameObj[13].transform.position;
-        vetGameObj[17].transform.position = vetGameObj[15].transform.position;
-
-        //3 face
-        vetGameObj[18].transform.position = new Vector3(vetGameObj[9].transform.position.x + 4, vetGameObj[9].transform.position.y, vetGameObj[9].transform.position.z);
-        vetGameObj[19].transform.position = new Vector3(vetGameObj[18].transform.position.x + 1, vetGameObj[18].transform.position.y, vetGameObj[18].transform.position.z);
-        vetGameObj[20].transform.position = new Vector3(vetGameObj[18].transform.position.x + 2, vetGameObj[18].transform.position.y, vetGameObj[18].transform.position.z);
-        vetGameObj[21].transform.position = new Vector3(vetGameObj[18].transform.position.x + 0.5f, vetGameObj[18].transform.position.y + 0.86603f, vetGameObj[18].transform.position.z + 0.28868f);
-        vetGameObj[21].transform.Rotate(110f, 0f, 0); // 90f
-        vetGameObj[22].transform.position = new Vector3(vetGameObj[19].transform.position.x + 0.5f, vetGameObj[19].transform.position.y + 0.86603f, vetGameObj[19].transform.position.z + 0.28868f);
-        vetGameObj[22].transform.Rotate(110f, 0f, 0);
-        vetGameObj[23].transform.position = vetGameObj[21].transform.position;
-
-        //  vetGameObj[11].transform.position = new Vector3(vetGameObj[2].transform.position.x + 3, vetGameObj[2].transform.position.y, vetGameObj[2].transform.position.z);
-        //vetGameObj[11].transform.Rotate(0f, -110f, 0f);
-
-        //vetGameObj[5].transform.Rotate(110f,0f,0); 
-        // vetGameObj[3].transform.RotateAround(transform.position, Vector3.forward, 5f);
-
-        pai = new GameObject();
-        pai.name = "Pivo 1";
-        //pai.transform.position = new Vector3(0,1,0); //pivo
-        pai.transform.position = new Vector3(0, 1, 0); //pivo
-        vetGameObj[3].transform.parent = pai.transform;
-        //vetGameObj[3].transform.bounds
     }
 
     // Update is called once per frame
