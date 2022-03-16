@@ -14,6 +14,7 @@ public class Pyramix_Manager : MonoBehaviour
     {
         trianguloArray = new GameObject[numeroDeTriangulos];
         pivoArray = new GameObject[numeroDeTriangulos];
+        // Cria os triangulos e os pivores
         for (int i = 0; i < numeroDeTriangulos; i++)
         {
             // Cria um pivo
@@ -32,7 +33,6 @@ public class Pyramix_Manager : MonoBehaviour
             trianguloArray[i].name = "Triangulo " + i;
             // Envia o triangulo no pivo            
             trianguloArray[i].transform.parent = pivoArray[i].transform;
-            
         }
     }
 
