@@ -22,7 +22,7 @@ public class CriaTriangulo: MonoBehaviour
         return vertex;
     }
 
-    public void Rebuild()
+    public void Start()
     {
         // Pega o meshFilter do objeto
         MeshFilter meshFilter = GetComponent<MeshFilter>();
@@ -100,9 +100,9 @@ public class CriaTriangulo: MonoBehaviour
         color[7] = new Color32(0, 255, 0, 255);
         color[8] = new Color32(0, 255, 0, 255);
 
-        color[9] = new Color32(0, 0, 255, 255);
-        color[10] = new Color32(0, 0, 255, 255);
-        color[11] = new Color32(0, 0, 255, 255);
+        color[9] = new Color32(255, 165, 0, 255);
+        color[10] = new Color32(255, 165, 0, 255);
+        color[11] = new Color32(255, 165, 0, 255);
 
         mesh.colors = color;
 
@@ -110,10 +110,5 @@ public class CriaTriangulo: MonoBehaviour
         mesh.RecalculateBounds();
         // Otimiza a mesh
         mesh.Optimize();
-    }
-    // No primeiro frame executa a construção do triangulo
-    void Start()
-    {
-        Rebuild();
     }
 }
