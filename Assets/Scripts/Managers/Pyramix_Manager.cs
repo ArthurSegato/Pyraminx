@@ -34,8 +34,8 @@ public class Pyramix_Manager : MonoBehaviour
             // Envia o triangulo no pivo            
             trianguloArray[i].transform.parent = pivoArray[i].transform;
         }
-        /* 
-            Define as posições dos triangulos
+        /*
+        *   Define as posições dos triangulos
         */
         // Amarelo (Frente)
         pivoArray[1].transform.position = new Vector3(1, 0, 0);
@@ -60,7 +60,20 @@ public class Pyramix_Manager : MonoBehaviour
         pivoArray[13].transform.Rotate(0.0f, 180.0f, 0f);
         pivoArray[14].transform.position = new Vector3(1.0f, 0, 1.72f);
         // Azul
-        
+        pivoArray[15].transform.position = new Vector3(0.3046848f, 0.2528399f, 0.366502f);
+        pivoArray[15].transform.Rotate(-53.237f, 3.649f, 32.34f);
+        pivoArray[16].transform.position = new Vector3(pivoArray[15].transform.position.x+0.5f,pivoArray[15].transform.position.y,pivoArray[15].transform.position.z+0.86f);
+        pivoArray[16].transform.Rotate(-53.237f, 3.649f, 32.34f);
+        pivoArray[17].transform.position = new Vector3(1.0f, 0.856f, 1.1f);
+        pivoArray[18].transform.position = new Vector3(0.8f, 1.1f, 0.66f);
+        pivoArray[18].transform.Rotate(-54.71f, 7.715f, 26.595f);
+        // Verde
+        pivoArray[19].transform.position = new Vector3(1.11f, 1.101006f, 0.700864f);
+        pivoArray[19].transform.Rotate(38.804f, 34.142f, 47.602f);
+        pivoArray[20].transform.position = new Vector3(1.129233f, 0.231463f, 1.29255f);
+        pivoArray[20].transform.Rotate(38.68f, 36.725f, 45.643f);
+        pivoArray[21].transform.position = new Vector3(1.657f, 0.29f, 0.426f);
+        pivoArray[21].transform.Rotate(38.68f, 36.725f, 45.643f);
     }
 
     // Update is called once per frame
