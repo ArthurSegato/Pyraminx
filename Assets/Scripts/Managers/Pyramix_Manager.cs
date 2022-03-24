@@ -9,6 +9,8 @@ public class Pyramix_Manager : MonoBehaviour
     public GameObject[] trianguloArray;
     // Array de pivores
     public GameObject[] pivoArray;
+
+    public GameObject pivoVermelho;
     // Use this for initialization
     void Start()
     {
@@ -74,6 +76,15 @@ public class Pyramix_Manager : MonoBehaviour
         pivoArray[20].transform.Rotate(38.68f, 36.725f, 45.643f);
         pivoArray[21].transform.position = new Vector3(1.657f, 0.29f, 0.426f);
         pivoArray[21].transform.Rotate(38.68f, 36.725f, 45.643f);
+
+        pivoVermelho.transform.position = new Vector3((pivoArray[0].transform.position.x + pivoArray[2].transform.position.x + pivoArray[14].transform.position.x) / 3.0f,
+        (pivoArray[0].transform.position.y + pivoArray[2].transform.position.y + pivoArray[14].transform.position.y) / 3.0f,
+        (pivoArray[0].transform.position.z + pivoArray[2].transform.position.z + pivoArray[14].transform.position.z) / 3.0f);
+        
+        for(int i = 0; i < 24; i++) {
+            if(i < 5 || (i > 8 && i < 17) || i >= 20)
+                pivoArray[i].transform.parent = pivoVermelho.transform;
+        }
     }
 
     // Update is called once per frame
