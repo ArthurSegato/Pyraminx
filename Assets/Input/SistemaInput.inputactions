@@ -1,0 +1,34 @@
+{
+    "name": "SistemaInput",
+    "maps": [
+        {
+            "name": "RotacaoPecas",
+            "id": "43fb45b1-dfd5-401d-bec3-458e0e7fbb7f",
+            "actions": [
+                {
+                    "name": "GirarBaseVermelha",
+                    "type": "Button",
+                    "id": "2beefa59-8212-4190-87e3-4e1c1840d836",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "ff9aee39-c023-4a30-99d5-4f72e2d5ac04",
+                    "path": "<Keyboard>/f1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GirarBaseVermelha",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

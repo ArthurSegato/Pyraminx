@@ -11,6 +11,14 @@ public class Pyramix_Manager : MonoBehaviour
     public GameObject[] pivoArray;
 
     public GameObject pivoVermelho;
+    public GameObject pivoAmarelo;
+    public GameObject pivoVerde;
+    public GameObject pivoAzul;
+    public GameObject baseSuperior1;
+    public GameObject baseSuperior2;
+    public GameObject baseSuperior3;
+    public GameObject baseSuperior4;
+    GameObject pai;
     // Use this for initialization
     void Start()
     {
@@ -77,19 +85,59 @@ public class Pyramix_Manager : MonoBehaviour
         pivoArray[21].transform.position = new Vector3(1.657f, 0.29f, 0.426f);
         pivoArray[21].transform.Rotate(38.68f, 36.725f, 45.643f);
 
+        // pivo base Vermelha
         pivoVermelho.transform.position = new Vector3((pivoArray[0].transform.position.x + pivoArray[2].transform.position.x + pivoArray[14].transform.position.x) / 3.0f,
         (pivoArray[0].transform.position.y + pivoArray[2].transform.position.y + pivoArray[14].transform.position.y) / 3.0f,
         (pivoArray[0].transform.position.z + pivoArray[2].transform.position.z + pivoArray[14].transform.position.z) / 3.0f);
         
-        for(int i = 0; i < 24; i++) {
-            if(i < 5 || (i > 8 && i < 17) || i >= 20)
-                pivoArray[i].transform.parent = pivoVermelho.transform;
-        }
+
+        //Esse loop terá que estar no update e ser chamado por um botão !
+
+
+        //pivo base Amarela
+        pivoAmarelo.transform.position = new Vector3((pivoArray[0].transform.position.x + pivoArray[2].transform.position.x + pivoArray[8].transform.position.x) / 3.0f,
+        (pivoArray[0].transform.position.y + pivoArray[2].transform.position.y + pivoArray[8].transform.position.y) / 3.0f,
+        (pivoArray[0].transform.position.z + pivoArray[2].transform.position.z + pivoArray[8].transform.position.z) / 3.0f);
+        
+        //pivo base Verde
+        pivoVerde.transform.position = new Vector3((pivoArray[14].transform.position.x + pivoArray[2].transform.position.x + pivoArray[8].transform.position.x) / 3.0f,
+        (pivoArray[14].transform.position.y + pivoArray[2].transform.position.y + pivoArray[8].transform.position.y) / 3.0f,
+        (pivoArray[14].transform.position.z + pivoArray[2].transform.position.z + pivoArray[8].transform.position.z) / 3.0f);
+        
+        //pivo base Azul
+        pivoAzul.transform.position = new Vector3((pivoArray[23].transform.position.x + pivoArray[14].transform.position.x + pivoArray[8].transform.position.x) / 3.0f,
+        (pivoArray[23].transform.position.y + pivoArray[14].transform.position.y + pivoArray[8].transform.position.y) / 3.0f,
+        (pivoArray[23].transform.position.z + pivoArray[14].transform.position.z + pivoArray[8].transform.position.z) / 3.0f);
+        
+
+        //pivo base superior 1
+        baseSuperior1.transform.position = new Vector3((pivoArray[5].transform.position.x + pivoArray[6].transform.position.x + pivoArray[17].transform.position.x) / 3.0f,
+        (pivoArray[5].transform.position.y + pivoArray[6].transform.position.y + pivoArray[17].transform.position.y) / 3.0f,
+        (pivoArray[5].transform.position.z + pivoArray[6].transform.position.z + pivoArray[17].transform.position.z) / 3.0f);
+        
+        //pivo base superior 2
+        baseSuperior2.transform.position = new Vector3((pivoArray[5].transform.position.x + pivoArray[11].transform.position.x + pivoArray[1].transform.position.x) / 3.0f,
+        (pivoArray[5].transform.position.y + pivoArray[11].transform.position.y + pivoArray[1].transform.position.y) / 3.0f,
+        (pivoArray[5].transform.position.z + pivoArray[11].transform.position.z + pivoArray[1].transform.position.z) / 3.0f);
+        
+        //pivo base superior 3
+        baseSuperior3.transform.position = new Vector3((pivoArray[1].transform.position.x + pivoArray[6].transform.position.x + pivoArray[12].transform.position.x) / 3.0f,
+        (pivoArray[1].transform.position.y + pivoArray[6].transform.position.y + pivoArray[12].transform.position.y) / 3.0f,
+        (pivoArray[1].transform.position.z + pivoArray[6].transform.position.z + pivoArray[12].transform.position.z) / 3.0f);
+        
+        //pivo base superior 4
+        baseSuperior4.transform.position = new Vector3((pivoArray[12].transform.position.x + pivoArray[11].transform.position.x + pivoArray[1].transform.position.x) / 3.0f,
+        (pivoArray[12].transform.position.y + pivoArray[11].transform.position.y + pivoArray[17].transform.position.y) / 3.0f,
+        (pivoArray[12].transform.position.z + pivoArray[11].transform.position.z + pivoArray[17].transform.position.z) / 3.0f);
+        
+        
+
     }
 
     // Update is called once per frame
     void Update()
-    {
+    {      
+
         //vetGameObj[3].transform.RotateAround(transform.position, Vector3.forward, 5f);
         //cria um gameobject: Pai. Tem eixo de rotacao
         //por o objeto como filho deste gameobject
@@ -98,4 +146,23 @@ public class Pyramix_Manager : MonoBehaviour
         //pai.transform.Rotate(Vector3.right * 5);
         //vetGameObj[4].transform.Rotate((Vector3.right + Vector3.up) * 5);
     }
+
+    public void GirarBaseVermelha(){
+        for(int i = 0; i < 24; i++) {
+            if(i < 5 || (i > 8 && i < 17) || i >= 20)
+                pivoArray[i].transform.parent = pivoVermelho.transform;
+        }
+        pivoVermelho.transform.Rotate(0.0f,30.0f,0.0f);
+    }
+    public void GirarBaseAmarela(){
+        pivoVermelho.transform.Rotate(0.0f,30.0f,0.0f);
+    }
+    public void GirarBaseVerde(){
+        pivoVermelho.transform.Rotate(0.0f,30.0f,0.0f);
+    }
+    public void GirarBaseAzul(){
+        pivoVermelho.transform.Rotate(0.0f,30.0f,0.0f);
+    }
+
+
 }
