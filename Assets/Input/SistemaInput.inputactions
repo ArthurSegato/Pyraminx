@@ -13,6 +13,69 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "GirarBaseAcima1",
+                    "type": "Button",
+                    "id": "a84168bd-7fee-4ea1-ae27-8e785d95c80a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "GirarBaseAcima4",
+                    "type": "Button",
+                    "id": "f2116d35-ded1-4d28-8d27-fd7f0e23a09c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "GirarBaseAmarela",
+                    "type": "Button",
+                    "id": "da7d40a9-1b6f-4aab-8eaf-3309911b7062",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "GirarBaseAzul",
+                    "type": "Button",
+                    "id": "2b5c216d-bfd7-4d37-ae97-7c01062706cc",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "GirarBaseAcima3",
+                    "type": "Button",
+                    "id": "58947c46-612d-4517-be7a-3f6c6b078446",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "GirarBaseVerde",
+                    "type": "Button",
+                    "id": "3b202c6a-d22d-4c05-9d31-c56f5937f0cd",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "GirarBaseAcima2",
+                    "type": "Button",
+                    "id": "d781345a-8ae7-4254-aac6-4f31ac0e91d6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -24,6 +87,83 @@
                     "processors": "",
                     "groups": "",
                     "action": "GirarBaseVermelha",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6f805469-2985-4395-a729-8320c89aa70f",
+                    "path": "<Keyboard>/f2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GirarBaseAcima1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e788e1d6-b90b-4851-b11e-5a5fd1417d5d",
+                    "path": "<Keyboard>/f3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GirarBaseAmarela",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "aa3c4ca3-d108-4171-a63c-6b795c258f58",
+                    "path": "<Keyboard>/f4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GirarBaseAcima4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a0c79fd9-c8e9-489f-8f3e-3b4c0cb6f34a",
+                    "path": "<Keyboard>/f5",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GirarBaseAzul",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "528bd1a9-5df4-478c-a0e5-591f0be9db17",
+                    "path": "<Keyboard>/f7",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GirarBaseVerde",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bda4aa5a-aa60-4d1d-b810-d0c1085d6ac4",
+                    "path": "<Keyboard>/f6",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GirarBaseAcima3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "77c84133-33a8-4094-9b49-dd3cd788f637",
+                    "path": "<Keyboard>/f8",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GirarBaseAcima2",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

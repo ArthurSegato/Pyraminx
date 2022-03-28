@@ -126,7 +126,7 @@ public class Pyramix_Manager : MonoBehaviour
         (pivoArray[1].transform.position.z + pivoArray[6].transform.position.z + pivoArray[12].transform.position.z) / 3.0f);
         
         //pivo base superior 4
-        baseSuperior4.transform.position = new Vector3((pivoArray[12].transform.position.x + pivoArray[11].transform.position.x + pivoArray[1].transform.position.x) / 3.0f,
+        baseSuperior4.transform.position = new Vector3((pivoArray[12].transform.position.x + pivoArray[11].transform.position.x + pivoArray[17].transform.position.x) / 3.0f,
         (pivoArray[12].transform.position.y + pivoArray[11].transform.position.y + pivoArray[17].transform.position.y) / 3.0f,
         (pivoArray[12].transform.position.z + pivoArray[11].transform.position.z + pivoArray[17].transform.position.z) / 3.0f);
         
@@ -149,20 +149,68 @@ public class Pyramix_Manager : MonoBehaviour
 
     public void GirarBaseVermelha(){
         for(int i = 0; i < 24; i++) {
-            if(i < 5 || (i > 8 && i < 17) || i >= 20)
+            if(pivoArray[i].transform.position.y>=-0.100f && pivoArray[i].transform.position.y<=0.3000f)
                 pivoArray[i].transform.parent = pivoVermelho.transform;
         }
         pivoVermelho.transform.Rotate(0.0f,30.0f,0.0f);
     }
+    public void GirarBaseAcima1(){
+        for(int i = 0; i < 24; i++) {
+            if(pivoArray[i].transform.position.y>=0.85f && pivoArray[i].transform.position.y<1.2f)
+                pivoArray[i].transform.parent = baseSuperior1.transform;
+        }
+        baseSuperior1.transform.Rotate(0.0f,30.0f,0.0f);
+    }    
     public void GirarBaseAmarela(){
-        pivoVermelho.transform.Rotate(0.0f,30.0f,0.0f);
+        for(int i = 0; i < 24; i++) {
+            if(pivoArray[i].transform.position.z>=-0.50f && pivoArray[i].transform.position.z<0.80f)
+                pivoArray[i].transform.parent = pivoAmarelo.transform;
+        }
+        pivoAmarelo.transform.Rotate(0.0f,30.0f,0.0f);
     }
-    public void GirarBaseVerde(){
-        pivoVermelho.transform.Rotate(0.0f,30.0f,0.0f);
+    public void GirarBaseAcima4(){
+        for(int i = 0; i < 24; i++) {
+            if(pivoArray[i].transform.position.z>=0.82f && pivoArray[i].transform.position.z<1.8f)
+                pivoArray[i].transform.parent = baseSuperior4.transform;
+        }
+        baseSuperior4.transform.Rotate(0.0f,30.0f,0.0f);
     }
+        
     public void GirarBaseAzul(){
-        pivoVermelho.transform.Rotate(0.0f,30.0f,0.0f);
+        for(int i = 0; i < 24; i++) {
+            if(pivoArray[i].transform.position.z>=-0.01f && pivoArray[i].transform.position.z<1.82f && pivoArray[i].transform.position.x>-0.0001f && pivoArray[i].transform.position.x<1.20f 
+            && !(pivoArray[i].transform.position.z>=-0.01f && pivoArray[i].transform.position.z<0.05f && pivoArray[i].transform.position.x>=0.98f && pivoArray[i].transform.position.x<1.02f)){
+                pivoArray[i].transform.parent = pivoAzul.transform;
+            }
+        }
+        pivoAzul.transform.Rotate(0.0f,30.0f,0.0f);
     }
 
+    public void GirarBaseAcima3(){
+        for(int i = 0; i < 24; i++) {
+            if(pivoArray[i].transform.position.x>0.98f && pivoArray[i].transform.position.x<2.1f && pivoArray[i].transform.position.z>-0.02f && pivoArray[i].transform.position.z<0.92f && pivoArray[i].transform.position.y<0.90f)
+                pivoArray[i].transform.parent = baseSuperior3.transform;
+        }
+        baseSuperior3.transform.Rotate(0.0f,30.0f,0.0f);
+    }   
+
+    public void GirarBaseVerde(){
+        for(int i = 0; i < 24; i++) {
+            if(pivoArray[i].transform.position.x>0.79f && pivoArray[i].transform.position.x<2.04f && pivoArray[i].transform.position.z>=-0.01f && pivoArray[i].transform.position.z<1.75f 
+            && !(pivoArray[i].transform.position.z>=-0.01f && pivoArray[i].transform.position.z<0.05f && (pivoArray[i].transform.position.x>-0.02f && pivoArray[i].transform.position.x<0.03f ||
+            pivoArray[i].transform.position.x>0.98f && pivoArray[i].transform.position.x<1.02f))){
+                pivoArray[i].transform.parent = pivoVerde.transform;
+            }
+        }
+        pivoVerde.transform.Rotate(0.0f,30.0f,0.0f);
+    }
+
+    public void GirarBaseAcima2(){
+        for(int i = 0; i < 24; i++) {
+            if(pivoArray[i].transform.position.x>-0.02f && pivoArray[i].transform.position.x<1.02f && pivoArray[i].transform.position.z>-0.02f && pivoArray[i].transform.position.z<0.89f && pivoArray[i].transform.position.y<0.90f)
+                pivoArray[i].transform.parent = baseSuperior2.transform;
+        }
+        baseSuperior2.transform.Rotate(0.0f,30.0f,0.0f);
+    }   
 
 }
