@@ -76,6 +76,42 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "GirarPivoPonta1",
+                    "type": "Button",
+                    "id": "07bbdb4e-7b70-4c7e-8b03-6698f3fa1099",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "GirarPivoPonta2",
+                    "type": "Button",
+                    "id": "8070221e-cce5-4db4-a463-d76ef66db4e1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "GirarPivoPonta3",
+                    "type": "Button",
+                    "id": "cb8c4902-4f63-46f7-b9df-a626fcb98375",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "GirarPivoPonta4",
+                    "type": "Button",
+                    "id": "e12fd20d-9824-4f84-b99b-5a7fbabf4a0b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -164,6 +200,50 @@
                     "processors": "",
                     "groups": "",
                     "action": "GirarBaseAcima2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a0300d05-fe46-4c2f-b8e7-5e6d3aadebd9",
+                    "path": "<Keyboard>/f9",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GirarPivoPonta1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "27502c2f-d08a-43ec-a5c3-3e333bb72af3",
+                    "path": "<Keyboard>/f10",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GirarPivoPonta2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a0c946b8-faa0-417e-8fdf-414036dd0573",
+                    "path": "<Keyboard>/f11",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GirarPivoPonta3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3318fb40-1f0a-4c2d-baf8-64c121cb4c96",
+                    "path": "<Keyboard>/f12",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GirarPivoPonta4",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
