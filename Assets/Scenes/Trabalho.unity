@@ -1031,7 +1031,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 959702630}
         m_TargetAssemblyTypeName: Pyramix_Manager, Assembly-CSharp
-        m_MethodName: GirarPivoPonta1
+        m_MethodName: GirarpivoTopoVermelho
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1047,7 +1047,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 959702630}
         m_TargetAssemblyTypeName: Pyramix_Manager, Assembly-CSharp
-        m_MethodName: GirarPivoPonta2
+        m_MethodName: GirarpivoTopoVerde
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1063,7 +1063,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 959702630}
         m_TargetAssemblyTypeName: Pyramix_Manager, Assembly-CSharp
-        m_MethodName: GirarPivoPonta3
+        m_MethodName: GirarpivoTopoAzul
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1079,7 +1079,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 959702630}
         m_TargetAssemblyTypeName: Pyramix_Manager, Assembly-CSharp
-        m_MethodName: GirarPivoPonta4
+        m_MethodName: GirarpivoTopoAmarelo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1136,7 +1136,7 @@ GameObject:
   m_Component:
   - component: {fileID: 510303865}
   m_Layer: 0
-  m_Name: PivoBaseVerde
+  m_Name: PivoMeioVerde
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1929,18 +1929,18 @@ MonoBehaviour:
   triangulo: {fileID: 7509999566143380689, guid: 45b821a8ce4c4c447b6fe0fb9c43fd13, type: 3}
   trianguloArray: []
   pivoArray: []
-  pivoVermelho: {fileID: 706064961}
-  pivoAmarelo: {fileID: 2043200850}
-  pivoVerde: {fileID: 964176180}
-  pivoAzul: {fileID: 267853122}
-  baseSuperior1: {fileID: 1682008199}
-  baseSuperior2: {fileID: 510303864}
-  baseSuperior3: {fileID: 221533177}
-  baseSuperior4: {fileID: 958501213}
-  pivoPonta1: {fileID: 65813701}
-  pivoPonta2: {fileID: 592675356}
-  pivoPonta3: {fileID: 692312017}
-  pivoPonta4: {fileID: 488515007}
+  pivoBaseVermelho: {fileID: 706064961}
+  pivoBaseAmarelo: {fileID: 2043200850}
+  pivoBaseVerde: {fileID: 964176180}
+  pivoBaseAzul: {fileID: 267853122}
+  pivoMeioVermelho: {fileID: 1682008199}
+  pivoMeioVerde: {fileID: 510303864}
+  pivoMeioAzul: {fileID: 221533177}
+  pivoMeioAmarelo: {fileID: 958501213}
+  pivoTopoVermelho: {fileID: 65813701}
+  pivoTopoVerde: {fileID: 592675356}
+  pivoTopoAzul: {fileID: 692312017}
+  pivoTopoAmarelo: {fileID: 488515007}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
