@@ -147,7 +147,7 @@ public class Pyramix_Manager : MonoBehaviour
             if(pivoArray[i].transform.position.y>=0.85f && pivoArray[i].transform.position.y<1.2f)
                 pivoArray[i].transform.parent = pivoMeioVermelho.transform;
         }
-        pivoMeioVermelho.transform.Rotate(0.0f,30.0f,0.0f);
+        pivoMeioVermelho.transform.Rotate(0.0f,10.0f,0.0f);
     }    
     public void GirarBaseAmarela(){
         for(int i = 0; i < numeroDeTriangulos; i++) {
@@ -207,7 +207,7 @@ public class Pyramix_Manager : MonoBehaviour
                 && (i==0 || i==2 || i==8 || i==14))
                 pivoArray[i].transform.parent = pivoTopoVermelho.transform;
         }
-        pivoTopoVermelho.transform.Rotate(0.0f,30.0f,0.0f);
+        pivoTopoVermelho.transform.Rotate(0.0f,10.0f,0.0f);
     }
 
     public void GirarpivoTopoVerde(){
